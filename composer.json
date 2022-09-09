@@ -1,16 +1,18 @@
 {
   "name": "vendor_name/stream",
-  "description": "description",
+  "description": "video streaming",
   "minimum-stability": "stable",
   "license": "proprietary",
   "type": "service-package",
   "authors": [
     {
       "name": "artak",
-      "email": "email@example.com"
+      "email": "manukyan.artak.21@gmail.com"
     }
   ],
   "require": {
+    "php": "^8.1",
+    "ext-fileinfo": "*",
     "php-ffmpeg/php-ffmpeg": "^1.0.0"
   },
   "require-dev": {
