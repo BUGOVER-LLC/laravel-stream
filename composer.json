@@ -1,5 +1,6 @@
 {
-  "name": "vendor_name/stream",
+  "name": "vendor_name/laravel-stream",
+  "version": "1.0.0",
   "description": "video streaming",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -11,9 +12,12 @@
     }
   ],
   "require": {
-    "php": "^8.1",
+    "php": ">=8.1.2 || <=8.3",
+    "php-64bit": ">=8.1.2 || <=8.3",
     "ext-fileinfo": "*",
-    "php-ffmpeg/php-ffmpeg": "^1.0.0"
+    "php-ffmpeg/php-ffmpeg": "^1.0.0",
+    "illuminate/events": "^9.0|10.0|^11.0",
+    "illuminate/broadcasting": "^9.0|10.0|^11.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest"

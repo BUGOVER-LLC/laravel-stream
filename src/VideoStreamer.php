@@ -6,54 +6,49 @@ namespace Service\Stream;
 
 use Exception;
 use JetBrains\PhpStorm\NoReturn;
-use RuntimeException;
 use Service\Stream\Events\VideoStreamEnded;
 use Service\Stream\Events\VideoStreamStarted;
+use Service\Stream\Exception\FileNotFoundException;
 
 class VideoStreamer
 {
     /**
-     * @var
-     */
-    private $stream;
-    /**
-     * @var string
-     */
-    private string $path;
-    /**
      * @var int
      */
     private int $buffer = 102400;
+
     /**
      * @var int
      */
     private int $start = -1;
+
     /**
      * @var int
      */
     private int $end = -1;
+
     /**
      * @var int
      */
     private int $size = 0;
+
     /**
      * @var string|bool
      */
     private string|bool $mime;
+
     /**
      * @var Video|null
      */
-    private ?Video $video = null;
+    private ?Video $video;
 
     /**
-     * @param string $file_path
+     * @param string $path
      * @param $stream
      */
-    public function __construct(string $file_path, $stream)
+    public function __construct(private readonly string $path, private $stream)
     {
-        $this->path = $file_path;
-        $this->stream = $stream;
-        $this->mime = mime_content_type($file_path);
+        $this->mime = mime_content_type($this->path);
 
         $this->video = new Video();
         $this->video->setPath($this->path);
@@ -67,7 +62,7 @@ class VideoStreamer
         $stream = fopen($path, 'rb');
 
         if (!$stream) {
-            throw new RuntimeException("File not found in: $path", 6542);
+            throw new FileNotFoundException("File not found in: $path", 6542);
         }
 
         (new static($path, $stream))->start();

@@ -25,7 +25,7 @@ class VideoStreamStarted implements ShouldBroadcastNow
      *
      * @param Video $video
      */
-    public function __construct(private Video $video)
+    public function __construct(private readonly Video $video)
     {
     }
 
