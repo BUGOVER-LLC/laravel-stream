@@ -1,6 +1,6 @@
 {
-  "name": "vendor_name/laravel-stream",
-  "version": "1.0.0",
+  "name": "bugover/laravel-stream",
+  "version": "1.0.1",
   "description": "video streaming",
   "minimum-stability": "stable",
   "license": "proprietary",
