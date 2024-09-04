@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Service\Stream\Exception;
 
 use Exception;
-use Throwable;
 
 class FileNotFoundException extends Exception
 {
