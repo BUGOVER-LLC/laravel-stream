@@ -1,6 +1,6 @@
 {
   "name": "bugover/laravel-stream",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "video streaming",
   "minimum-stability": "stable",
   "license": "proprietary",
