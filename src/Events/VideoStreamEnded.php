@@ -44,7 +44,8 @@ class VideoStreamEnded implements ShouldBroadcastNow
      */
     #[Pure] #[ArrayShape([
         'stream' => Video::class,
-    ])] public function broadcastAs(): array
+    ])]
+    public function broadcastAs(): array
     {
         return ['stream' => $this->getVideo()];
     }

@@ -1,6 +1,6 @@
 {
   "name": "bugover/laravel-stream",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "video streaming",
   "minimum-stability": "stable",
   "license": "proprietary",
@@ -19,7 +19,8 @@
     "laravel/framework": "^9.0|10.0|^11.0"
   },
   "require-dev": {
-    "roave/security-advisories": "dev-latest"
+    "roave/security-advisories": "dev-latest",
+    "friendsofphp/php-cs-fixer": "^3.66"
   },
   "config": {
     "platform": {
